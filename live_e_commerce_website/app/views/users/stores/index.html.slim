@@ -1,0 +1,5 @@
+- @stores.each do |store|
+  .row
+    .col-md-6 = link_to(store.name, user_store_path(user_id: @user.id, id: store.id))
+.row
+  .col-md-6 = link_to('New Store', new_user_store_path(@user))  

@@ -1,0 +1,5 @@
+= simple_form_for @product, as: :product, url: user_products_path do |form|
+  .row
+    .col-md-3 = form.input :name
+  .row
+    .col-md-3 = form.submit 'Create Product', class: 'btn btn-primary'

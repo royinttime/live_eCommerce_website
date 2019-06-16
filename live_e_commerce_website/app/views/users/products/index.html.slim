@@ -1,0 +1,5 @@
+- @products.each do |product|
+  .row
+    .col-md-6 = link_to(product.name, user_product_path(user_id: @user.id, id: product.id))
+.row
+  .col-md-6 = link_to('New Product', new_user_product_path(@user))  

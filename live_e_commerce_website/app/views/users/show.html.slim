@@ -1,0 +1,10 @@
+.row
+  .col-md-6
+    - if @user.full_name.present?
+      = "Hello #{@user.full_name}"
+    - else
+      = "Hello Guest"
+.row
+  .col-md-6 = link_to('Your Stores', user_stores_path(@user))
+.row
+  .col-md-6 = link_to('Your Products', user_products_path(@user))
