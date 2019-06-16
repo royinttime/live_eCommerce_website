@@ -14,7 +14,7 @@ class Users::ProductsController < Users::BaseController
   end
 
   def create
-  	@product = @user.products.build(create_product_params)
+    @product = @user.products.build(create_product_params)
     if @product.save
       redirect_to user_product_path(user_id: @user.id, id: @product.id)
     else

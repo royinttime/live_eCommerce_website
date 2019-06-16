@@ -14,7 +14,7 @@ class Users::StoresController < Users::BaseController
   end
 
   def create
-  	@store = @user.stores.build(create_store_params)
+    @store = @user.stores.build(create_store_params)
     if @store.save
       redirect_to user_store_path(user_id: @user.id, id: store.id)
     else

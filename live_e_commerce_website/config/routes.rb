@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     resources :stores, only: [:index, :show, :new, :create, :edit, :update, :destroy], module: :users
     resources :products, only: [:index, :show, :new, :create, :edit, :update, :destroy], module: :users
   end
+
+  resources :stores, only: [:index, :show]
 end
