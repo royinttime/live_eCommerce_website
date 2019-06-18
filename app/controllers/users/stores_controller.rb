@@ -31,7 +31,7 @@ class Users::StoresController < Users::BaseController
   private
 
   def create_store_params
-    params.require(:store).permit(:name, :live_streaming_url)
+    params.require(:store).permit(:name, :youtube_channel_id)
   end
 
   def prepare_store

@@ -1,0 +1,5 @@
+iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=#{@live_room.store.youtube_channel_id}" frameborder="0" allowfullscreen
+
+.row
+  .col-md-6
+    p class="live_room_#{@live_room.id}current_product" = @live_room.product

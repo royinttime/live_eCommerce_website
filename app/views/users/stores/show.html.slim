@@ -1,4 +1,6 @@
 .row
   .col-md-6 = @store.name
 .row
-  .col-md-6 = @store.live_streaming_url
+  .col-md-6 = @store.youtube_channel_id
+.row
+  .col-md-6 = link_to('Live Channel Config Page', edit_user_store_live_room(user: @user, store: @store, live_room: @store.live_room))
