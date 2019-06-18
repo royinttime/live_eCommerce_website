@@ -16,14 +16,14 @@ ActiveRecord::Schema.define(version: 2019_06_16_133808) do
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "live_channels", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "live_rooms", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "store_id", null: false
     t.boolean "live"
     t.string "title"
     t.string "displayed_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["store_id"], name: "index_live_channels_on_store_id"
+    t.index ["store_id"], name: "index_live_rooms_on_store_id"
   end
 
   create_table "products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 2019_06_16_133808) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.uuid "live_channel_id"
-    t.index ["live_channel_id"], name: "index_products_on_live_channel_id"
+    t.uuid "live_room_id"
+    t.index ["live_room_id"], name: "index_products_on_live_room_id"
     t.index ["store_id"], name: "index_products_on_store_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_06_16_133808) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "live_streaming_url"
+    t.string "youtube_channel_id"
     t.index ["user_id"], name: "index_stores_on_user_id"
   end
 
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 2019_06_16_133808) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "live_channels", "stores"
-  add_foreign_key "products", "live_channels"
+  add_foreign_key "live_rooms", "stores"
+  add_foreign_key "products", "live_rooms"
   add_foreign_key "products", "stores"
   add_foreign_key "products", "users"
   add_foreign_key "stores", "users"
