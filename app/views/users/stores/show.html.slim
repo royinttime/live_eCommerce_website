@@ -3,4 +3,4 @@
 .row
   .col-md-6 = @store.youtube_channel_id
 .row
-  .col-md-6 = link_to('Live Channel Config Page', edit_user_store_live_room(user: @user, store: @store, live_room: @store.live_room))
+  .col-md-6 = link_to('Live Channel Config Page', edit_user_store_live_room_path(user_id: @user.id, store_id: @store.id, id: @store.live_room.id))
