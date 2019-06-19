@@ -1,5 +1,6 @@
 .live_room data-id="#{@live_room.id}"
-  iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=#{@live_room.store.youtube_channel_id}" frameborder="0" allowfullscreen
+  .embed-responsive.embed-responsive-4by3
+    iframe.embed-responsive-item src="https://www.youtube.com/embed/live_stream?channel=#{@live_room.store.youtube_channel_id}" allowfullscreen
 
   .row
     .col-md-6

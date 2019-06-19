@@ -1,3 +1,4 @@
-iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=#{@store.youtube_channel_id}" frameborder="0" allowfullscreen
+.embed-responsive.embed-responsive-4by3
+  iframe.embed-responsive-item src="https://www.youtube.com/embed/live_stream?channel=#{@store.youtube_channel_id}" allowfullscreen
 .row
   .col-md-6 = link_to('Live Room', store_live_room_path(store_id: @store, id: @store.live_room.id))
