@@ -35,7 +35,7 @@ class Users::StoresController < Users::BaseController
   end
 
   def prepare_store
-    @store ||= Store.find(params[:id])
+    @store = Store.find(params[:id])
   end
 
 end

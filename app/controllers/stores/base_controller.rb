@@ -5,7 +5,7 @@ class Stores::BaseController < ApplicationController
   private
 
   def prepare_store
-    @store ||= Store.find(params[:store_id])
+    @store = Store.find(params[:store_id])
   end
 
 end

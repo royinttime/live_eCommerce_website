@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   private
 
   def prepare_user
-    @user ||= current_user
+    @user = current_user
   end
 
 end

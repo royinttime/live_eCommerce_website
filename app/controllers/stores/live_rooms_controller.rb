@@ -21,7 +21,7 @@ class Stores::LiveRoomsController < Stores::BaseController
   private
 
   def prepare_live_room
-  	@live_room ||= LiveRoom.find(params[:id])
+  	@live_room = LiveRoom.find(params[:id])
   end
 
 end

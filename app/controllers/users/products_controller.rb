@@ -35,7 +35,7 @@ class Users::ProductsController < Users::BaseController
   end
 
   def prepare_product
-    @product ||= Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
 end
