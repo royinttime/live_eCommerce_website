@@ -1,7 +1,11 @@
-.live_room data-id="#{@live_room.id}"
+#live_room data-id="#{@live_room.id}" data-store-id="#{@store.id}"
   .embed-responsive.embed-responsive-4by3
     iframe.embed-responsive-item src="https://www.youtube.com/embed/live_stream?channel=#{@live_room.store.youtube_channel_id}" allowfullscreen
 
   .row
+    .col-md-2
+      p id="people_in_live_room"
+
+  .row
     .col-md-6
-      p class="live_room_#{@live_room.id}current_product" = @live_room.product
+      p id="live_room_#{@live_room.id}_current_product" = @live_room.product

@@ -7,12 +7,16 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update] do
     resources :stores, only: [:index, :show, :new, :create, :edit, :update, :destroy], module: :users do
-      resources :live_rooms, only: [:edit, :update], module: :stores
+      resources :live_rooms, only: [:edit, :update], module: :stores do
+        get :people_on_live_chat_room, on: :collection
+      end
     end
     resources :products, only: [:index, :show, :new, :create, :edit, :update, :destroy], module: :users
   end
 
   resources :stores, only: [:index, :show] do
-  	resources :live_rooms, only: [:show], module: :stores
+  	resources :live_rooms, only: [:show], module: :stores do
+      get :people_on_live_chat_room, on: :collection
+    end
   end
 end

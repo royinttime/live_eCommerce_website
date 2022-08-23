@@ -17,4 +17,8 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require cable
+//= require paloma
+
+//= require_tree ./controllers
+
 //= require_tree .

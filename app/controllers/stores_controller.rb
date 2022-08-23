@@ -1,7 +1,5 @@
 class StoresController < ApplicationController
 
-  include ActionController::Live
-
   before_action :prepare_store, only: [:show]
 
   def index
@@ -9,6 +7,7 @@ class StoresController < ApplicationController
   end
 
   def show
+    response
   end
 
   private
