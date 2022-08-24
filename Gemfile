@@ -45,6 +45,8 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 # Page-specific JavaScript for Rails done right
 gem 'paloma', '~> 5.1.0'
+# Use Turbo in your Ruby on Rails app
+gem 'turbo-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -53,6 +55,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   # A library for setting up Ruby objects as test data
   gem 'factory_bot_rails'
+  # The instafailing RSpec progress bar formatter
+  gem 'fuubar'
 end
 
 group :development do
